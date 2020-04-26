@@ -1,0 +1,19 @@
+version: '3.7'
+
+services:
+  geminabox:
+    image: ttksm/geminabox:latest
+    container_name: geminabox
+    environment:
+      BASIC_USER: username
+      BASIC_PASS: password
+    ports:
+      - "8080:9292"
+    restart: always
+    volumes:
+      - type: volume
+        source: geminabox-data
+        target: /var/geminabox-data
+
+volumes:
+  geminabox-data:
