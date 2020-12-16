@@ -1,4 +1,4 @@
-FROM ruby:2.6.5
+FROM ruby:2.6.6-alpine
 
 LABEL maintainer="ttksm <ttksm.git@gmail.com>"
 
@@ -6,8 +6,7 @@ USER root
 
 RUN mkdir /app \
     && gem update --system \
-    && gem uninstall bundler \
-    && gem install bundler -v 2.1.4
+    && gem install bundler
 
 WORKDIR /app
 COPY Gemfile* config.ru ./

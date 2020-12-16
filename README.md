@@ -2,7 +2,7 @@
 
 ## Overview
 [Geminabox](https://github.com/geminabox/geminabox) lets you host your own gems, and push new gems to it just like with rubygems.org.
-This docker image include Geminabox on runtime of the official [ruby:2.6.5](https://hub.docker.com/_/ruby).
+This docker image include Geminabox on runtime of the official [ruby:2.6.6-alpine](https://hub.docker.com/_/ruby).
 
 ## Usage
 

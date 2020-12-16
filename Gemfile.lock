@@ -27,12 +27,14 @@ GEM
       rack-protection (= 2.0.8.1)
       tilt (~> 2.0)
     tilt (2.0.10)
+    webrick (1.7.0)
 
 PLATFORMS
   ruby
 
 DEPENDENCIES
   geminabox (~> 1.2.0)
+  webrick (~> 1.7.0)
 
 BUNDLED WITH
-   2.1.4
+   2.2.1
