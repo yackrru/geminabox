@@ -1,20 +1,24 @@
-FROM ruby:2.6.6-alpine
+FROM ruby:2.7-alpine AS Builder
 
-LABEL maintainer="ttksm <ttksm.git@gmail.com>"
-
-USER root
-
-RUN mkdir /app \
-    && gem update --system \
-    && gem install bundler
+RUN apk add --no-cache build-base
+RUN gem install bundler
 
 WORKDIR /app
-COPY Gemfile* config.ru ./
+ADD Gemfile* ./
 RUN bundle install
 
-ENV BASIC_USER="" \
-    BASIC_PASS=""
+
+FROM ruby:2.7-alpine
+LABEL maintainer="Zac"
+
+WORKDIR /app
+COPY --from=Builder /usr/local/bundle/ /usr/local/bundle/
+COPY Gemfile* config.ru ./
+
+ENV BASIC_USER=""
+ENV BASIC_PASS=""
+ENV RACK_ENV="production"
 
 EXPOSE 9292
 
-ENTRYPOINT ["rackup", "--host", "0.0.0.0"]
+ENTRYPOINT ["bundle", "exec", "puma"]
