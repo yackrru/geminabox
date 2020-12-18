@@ -1,3 +1,6 @@
+![Docker Cloud Automated build](https://img.shields.io/docker/cloud/automated/7a6163/geminabox)
+![Docker Image Size (latest by date)](https://img.shields.io/docker/image-size/7a6163/geminabox)
+
 # Docker image of Gem in a Box
 
 ## Overview
