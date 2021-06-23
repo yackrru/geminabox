@@ -1,10 +1,14 @@
-FROM ruby:2.6.6-alpine
+FROM ruby:3.0.1-alpine
 
 LABEL maintainer="ttksm <ttksm.git@gmail.com>"
 
 USER root
 
-RUN mkdir /app \
+RUN apk update && \
+    apk upgrade && \
+    apk add --no-cache \
+    build-base \
+    && mkdir /app \
     && gem update --system \
     && gem install bundler
 
@@ -17,4 +21,4 @@ ENV BASIC_USER="" \
 
 EXPOSE 9292
 
-ENTRYPOINT ["rackup", "--host", "0.0.0.0"]
+ENTRYPOINT ["rackup", "-s", "puma", "--host", "0.0.0.0"]
