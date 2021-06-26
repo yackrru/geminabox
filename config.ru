@@ -12,10 +12,10 @@ use Rack::Session::Pool, expire_after: 1000 # sec
 use Rack::Protection
 
 # Basic Authentication
-@username = ENV["BASIC_USER"] || ""
-@password = ENV["BASIC_PASS"] || ""
+$username = ENV["BASIC_USER"] || ""
+$password = ENV["BASIC_PASS"] || ""
 
-unless @username.empty? && @password.empty?
+unless $username.empty? && $password.empty?
   Geminabox::Server.helpers do
     def protected!
       unless authorized?
@@ -26,7 +26,7 @@ unless @username.empty? && @password.empty?
 
     def authorized?
       @auth ||=  Rack::Auth::Basic::Request.new(request.env)
-      @auth.provided? && @auth.basic? && @auth.credentials && @auth.credentials == [@username, @password]
+      @auth.provided? && @auth.basic? && @auth.credentials && @auth.credentials == [$username, $password]
     end
   end
 
