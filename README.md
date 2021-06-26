@@ -1,8 +1,9 @@
 # Docker image of Gem in a Box
+[![CI](https://github.com/ttksm/geminabox/actions/workflows/ci.yml/badge.svg)](https://github.com/ttksm/geminabox/actions/workflows/ci.yml)
 
 ## Overview
 [Geminabox](https://github.com/geminabox/geminabox) lets you host your own gems, and push new gems to it just like with rubygems.org.
-This docker image include Geminabox on runtime of the official [ruby:2.6.6-alpine](https://hub.docker.com/_/ruby).
+This docker image include Geminabox on runtime of the official [ruby image](https://hub.docker.com/_/ruby).
 
 ## Usage
 
@@ -14,7 +15,8 @@ docker run -d -p 8080:9292 ttksm/geminabox:latest
 ```
 After executing the command, you can browse geminabox where http://localhost:8080.
 <br>
-Then, executing the follwing command enables gem networking your own geminabox.
+Then, run the following command on the computer where you want to use geminabox as the gems source repository,
+and you will be able to communicate with the geminabox container as the gems source.
 ```bash
 gem sources -a http://localhost:8080/
 ```
@@ -36,7 +38,7 @@ Docker run command as follows.
 ```bash
 docker run -d -p 8080:9292 -e BASIC_USER=username -e BASIC_PASS=password ttksm/geminabox:latest
 ```
-And in order to enabling auto authentication when you install gems on cli, you should run the command.
+You also need to run the following command to enable automatic authentication when installing gems with cli.
 ```bash
 gem sources -a http://username:password@localhost:8080/
 ```
