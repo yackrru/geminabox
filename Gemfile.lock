@@ -2,39 +2,56 @@ GEM
   remote: https://rubygems.org/
   specs:
     builder (3.2.4)
-    faraday (1.0.1)
+    faraday (1.4.2)
+      faraday-em_http (~> 1.0)
+      faraday-em_synchrony (~> 1.0)
+      faraday-excon (~> 1.1)
+      faraday-net_http (~> 1.0)
+      faraday-net_http_persistent (~> 1.1)
       multipart-post (>= 1.2, < 3)
-    geminabox (1.2.0)
+      ruby2_keywords (>= 0.0.4)
+    faraday-em_http (1.0.0)
+    faraday-em_synchrony (1.0.0)
+    faraday-excon (1.1.0)
+    faraday-net_http (1.0.1)
+    faraday-net_http_persistent (1.1.0)
+    geminabox (1.4.1)
       builder
       faraday
       httpclient (>= 2.2.7)
       nesty
       reentrant_flock
+      rss
       sinatra (>= 1.2.7)
     httpclient (2.8.3)
     multipart-post (2.1.1)
     mustermann (1.1.1)
       ruby2_keywords (~> 0.0.1)
     nesty (1.0.2)
+    nio4r (2.5.7)
+    puma (5.3.2)
+      nio4r (~> 2.0)
     rack (2.2.3)
-    rack-protection (2.0.8.1)
+    rack-protection (2.1.0)
       rack
     reentrant_flock (0.1.1)
-    ruby2_keywords (0.0.2)
-    sinatra (2.0.8.1)
+    rexml (3.2.5)
+    rss (0.2.9)
+      rexml
+    ruby2_keywords (0.0.4)
+    sinatra (2.1.0)
       mustermann (~> 1.0)
-      rack (~> 2.0)
-      rack-protection (= 2.0.8.1)
+      rack (~> 2.2)
+      rack-protection (= 2.1.0)
       tilt (~> 2.0)
     tilt (2.0.10)
-    webrick (1.7.0)
 
 PLATFORMS
   ruby
 
 DEPENDENCIES
-  geminabox (~> 1.2.0)
-  webrick (~> 1.7.0)
+  geminabox (~> 1.4.1)
+  puma (~> 5.3.2)
 
 BUNDLED WITH
-   2.2.1
+   2.2.16

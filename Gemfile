@@ -1,4 +1,4 @@
 source 'https://rubygems.org'
 
-gem 'geminabox', '~> 1.2.0'
-gem 'webrick', '~> 1.7.0'
+gem 'geminabox', '~> 1.4.1'
+gem 'puma', '~> 5.3.2'
