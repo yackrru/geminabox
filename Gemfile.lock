@@ -32,17 +32,17 @@ GEM
     puma (5.6.4)
       nio4r (~> 2.0)
     rack (2.2.3)
-    rack-protection (2.1.0)
+    rack-protection (2.2.0)
       rack
     reentrant_flock (0.1.1)
     rexml (3.2.5)
     rss (0.2.9)
       rexml
-    ruby2_keywords (0.0.4)
-    sinatra (2.1.0)
+    ruby2_keywords (0.0.5)
+    sinatra (2.2.0)
       mustermann (~> 1.0)
       rack (~> 2.2)
-      rack-protection (= 2.1.0)
+      rack-protection (= 2.2.0)
       tilt (~> 2.0)
     tilt (2.0.10)
 
